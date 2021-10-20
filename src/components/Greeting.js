@@ -13,30 +13,31 @@ function getGreetings() {
       .then((json) => dispatch(getGreetingsSuccess(json)))
       .catch((error) => error);
   };
-};
+}
 
 function getGreetingsSuccess(json) {
   return {
     type: GET_GREETINGS_SUCCESS,
-    json
+    json,
   };
-};
+}
 
 class Greeting extends React.Component {
   componentDidMount() {
-    this.props.getGreetings()
+    this.props.getGreetings();
   }
-  render () {
+
+  render() {
     const { greetings } = this.props;
     return (
-      <React.Fragment>
+      <>
         <h1>{ greetings[0].message }</h1>
-      </React.Fragment>
+      </>
     );
   }
 }
 const structuredSelector = createStructuredSelector({
-  greetings: state => state.greetings
+  greetings: (state) => state.greetings,
 });
 
 const mapDispatchToProps = { getGreetings };
