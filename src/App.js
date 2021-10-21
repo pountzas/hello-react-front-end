@@ -9,6 +9,7 @@ import Greeting from './components/Greeting';
 
 const store = configureStore();
 
+// eslint-disable-next-line react/prefer-stateless-function
 class App extends React.Component {
   render() {
     return (
