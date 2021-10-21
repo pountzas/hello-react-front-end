@@ -36,6 +36,7 @@ class Greeting extends React.Component {
     );
   }
 }
+
 const structuredSelector = createStructuredSelector({
   greetings: (state) => state.greetings,
 });
